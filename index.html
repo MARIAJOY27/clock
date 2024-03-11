@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/icon" href="https://m.media-amazon.com/images/I/61EairTLzKL.jpg">
+    <title>Clock</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div>
+        <h1 id="clock"></h1>
+    </div>
+</body>
+<script>
+    function getTime(){
+        const time = new Date() //class
+        console.log(time)
+        let hour = time.getHours()
+        console.log(hour)
+        let min = time.getMinutes()
+        console.log(min)
+        let sec = time.getSeconds()
+        console.log(sec)
+
+        clock.innerHTML = `${hour} : ${min} : ${sec} ${hour>=12?'PM':'AM'}`
+
+        setTimeout(()=>{
+            getTime()
+        },1000)
+    }
+    getTime()
+</script>
+</html>
